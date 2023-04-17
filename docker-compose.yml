@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  claude:
+    image: claude
+    container_name: claude
+    restart: unless-stopped
+    environment:
+      - PERMITTED_USERS=<ID>,<ID>,<ID>
+      - TELEGRAM_TOKEN=<token>
+      - ANTRO_API_KEY=<key>
+    ports: 
+      - 8091:80
+      - 8090:443
+    
